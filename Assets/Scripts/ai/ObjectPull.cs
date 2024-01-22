@@ -33,6 +33,14 @@ public class ObjectPool
         return newObj;
     }
 
+    public void DisableObjectsInPool()
+    {
+        foreach (GameObject obj in pool)
+        {
+            obj.SetActive(false);
+        }
+    }
+
     private GameObject CreateObject()
     {
         GameObject obj = GameObject.Instantiate(prefab);

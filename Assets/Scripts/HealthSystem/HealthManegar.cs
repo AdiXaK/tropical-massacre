@@ -21,13 +21,15 @@ public class HealthManager : MonoBehaviour
 
     void Die()
     {
-       if(this.CompareTag("Player"))
+        if (this.CompareTag("Player"))
         {
             return;
         }
         else
         {
-            Destroy(this.gameObject);
+          this.gameObject.SetActive(false);
         }
     }
+
+
 }

@@ -8,6 +8,7 @@ public class SpawnObject
     public GameObject prefab;
     public float spawnChance;
     public float spawnDistance;
+    public ObjectPool objectPool; // New property to store the object pool
 }
 
 public class EnemySpawner : MonoBehaviour
@@ -17,12 +18,16 @@ public class EnemySpawner : MonoBehaviour
     public int enemyCount = 1;
     public int enemyIncreaseAmount = 4;
 
-    private ObjectPool enemyPool;
     private Coroutine spawnCoroutine;
 
     private void Start()
     {
-        enemyPool = new ObjectPool(spawnObjects[0].prefab, 50);
+        foreach (SpawnObject spawnObject in spawnObjects)
+        {
+            ObjectPool objectPool = new ObjectPool(spawnObject.prefab, 50);
+            spawnObject.objectPool = objectPool;
+        }
+
         spawnCoroutine = StartCoroutine(SpawnEnemiesWithProgression());
     }
 
@@ -49,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
                 NavMeshHit hit;
                 if (NavMesh.SamplePosition(randomSpawnPoint, out hit, 10f, NavMesh.AllAreas))
                 {
-                    GameObject spawnedEnemy = enemyPool.GetObjectFromPool();
+                    GameObject spawnedEnemy = spawnObject.objectPool.GetObjectFromPool();
 
                     if (spawnedEnemy != null)
                     {
@@ -57,11 +62,8 @@ public class EnemySpawner : MonoBehaviour
                         spawnedEnemy.SetActive(true);
                     }
                 }
-                else
-                {
-                    Debug.LogWarning("Failed to find a valid point on the navigation mesh for enemy spawn.");
-                }
             }
+
             enemyCount += enemyIncreaseAmount;
             yield return new WaitForSeconds(spawnInterval);
         }

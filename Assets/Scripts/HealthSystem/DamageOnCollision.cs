@@ -8,11 +8,11 @@ public class DamageOnCollision : MonoBehaviour
     {
         if (other.CompareTag(Target)) 
         {
-            HealthManager playerHealthManager = other.GetComponent<HealthManager>(); 
-            if (playerHealthManager != null)
-            {
-                playerHealthManager.TakeDamage(damageAmount);
-            }
+            HealthManager HealthManager = GetComponent<HealthManager>(); 
+            HealthManager.TakeDamage(damageAmount);
+            Destroy(other.gameObject);
         }
-    }
+   }
+
+ 
 }

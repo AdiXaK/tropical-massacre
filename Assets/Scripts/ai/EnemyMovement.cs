@@ -5,6 +5,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private Transform player;
     private NavMeshAgent navMeshAgent;
+    public float attackRange = 2f;
 
     private void Start()
     {
@@ -18,6 +19,15 @@ public class EnemyMovement : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             navMeshAgent.SetDestination(player.position);
+            if (Vector3.Distance(transform.position, player.position) <= attackRange)
+            {
+                Attack(); 
+            }
         }
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Атака!");
     }
 }

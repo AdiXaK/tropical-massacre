@@ -60,8 +60,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ai\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\ai\ObjectPull.cs" />
+    <Compile Include="Assets\Scripts\attack\Player shooting.cs" />
     <Compile Include="Assets\Scripts\ai\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\BaseCharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\attack\ProjectileScript.cs" />
+    <Compile Include="Assets\Scripts\ai\PirateAi.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\HeadBob.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\DamageOnCollision.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\BaseCharacterRotation.cs" />
