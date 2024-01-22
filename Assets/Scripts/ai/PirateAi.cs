@@ -6,11 +6,13 @@ public class PirateAi : MonoBehaviour
 {
     public Transform player;
     public Transform enemy;
+
     public float distanceThreshold = 10f;
     public float movementSpeed = 5f;
     public float deadZone = 1f;
-    public float fireRate = 2f; 
-    private float lastFireTime = 0f; 
+    public float fireRate = 2f;
+    private float lastFireTime = 0f;
+
     public GameObject bulletPrefab;
     public Transform firePoint;
 
@@ -23,21 +25,19 @@ public class PirateAi : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(player.position, enemy.position);
-        Debug.Log("Distance to player: " + distance);
 
         if (distance > distanceThreshold)
         {
             Vector3 direction = (player.position - enemy.position).normalized;
             enemy.position += direction * movementSpeed * Time.deltaTime;
         }
-        else if (distance < distanceThreshold - deadZone)
+        else if (distance < distanceThreshold + deadZone)
         {
             Vector3 direction = (enemy.position - player.position).normalized;
             enemy.position += direction * movementSpeed * Time.deltaTime;
-            Debug.Log("Ready to fire!");
             if (Time.time - lastFireTime >= fireRate)
             {
-                FireBullet(); 
+                FireBullet();
                 lastFireTime = Time.time;
             }
         }
@@ -45,12 +45,14 @@ public class PirateAi : MonoBehaviour
 
     void FireBullet()
     {
-        GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        ProjectileScript projectileScript = projectile.GetComponent<ProjectileScript>(); 
+        GameObject projectile = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Vector3 shootDirection = (player.position - firePoint.position).normalized;
+        projectile.transform.rotation = Quaternion.LookRotation(shootDirection);
 
+        ProjectileScript projectileScript = projectile.GetComponent<ProjectileScript>();
         if (projectileScript != null)
         {
-            projectileScript.SetProperties(7f); // Устанавливаем скорость движения снаряда
+            projectileScript.SetProperties(7f);
         }
     }
 }

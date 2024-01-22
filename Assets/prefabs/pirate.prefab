@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6935214765000312218}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,7 +133,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!114 &-5091722176611192699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88b2aee2e137b144be87a074dae2481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
+  maxHealth: 2
+  currentHealth: 2
 --- !u!114 &2755061264256919041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,5 +206,6 @@ MonoBehaviour:
   distanceThreshold: 10
   movementSpeed: 3
   deadZone: 4
-  bulletPrefab: {fileID: 1483241524860640535, guid: 3a113c7f2e413e84fa6a2112c8f06fc0, type: 3}
-  firePoint: {fileID: 4363938420872260180, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
+  fireRate: 2
+  bulletPrefab: {fileID: 1483241524860640535, guid: 95fbd5d4f25cf9c4086023aed39fefc6, type: 3}
+  firePoint: {fileID: 1917858645875094925}

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Eneny
+  - Bullet
+  - noPlayerbullet
   layers:
   - Default
   - TransparentFX
