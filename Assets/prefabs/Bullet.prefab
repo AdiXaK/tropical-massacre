@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.383268, y: 18.805473, z: 32.14381}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,4 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5127adb00a1899498be130a359ce0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5530728432725399791, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
+  maxDistance: 20

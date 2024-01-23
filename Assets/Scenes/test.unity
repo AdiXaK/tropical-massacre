@@ -469,6 +469,20 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1483241524860640535, guid: 3a113c7f2e413e84fa6a2112c8f06fc0, type: 3}
   attackSpeed: 7
   projectileSpeed: 20
+--- !u!114 &673254128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673254113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920b0047575398b439493a9959850366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+  Target: noPlayerbullet
 --- !u!4 &870201477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1033504387833483396, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
@@ -508,13 +522,13 @@ MonoBehaviour:
     spawnChance: 20
     spawnDistance: 25
   - prefab: {fileID: 6935214765000312218, guid: 1297e44ebc77c0e45a4c82a772e99e51, type: 3}
-    spawnChance: 40
+    spawnChance: 45
     spawnDistance: 25
   - prefab: {fileID: 6935214765000312218, guid: 75b3e7ce0b152c84e9479e2a5a2e92c7, type: 3}
     spawnChance: 15
     spawnDistance: 25
   - prefab: {fileID: 6935214765000312218, guid: ba718ce3e9d3b4e43b1ac74fbca91cec, type: 3}
-    spawnChance: 25
+    spawnChance: 20
     spawnDistance: 25
   spawnInterval: 3.5
   enemyCount: 1
@@ -1540,7 +1554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deeecf31b30fe634699a45a17c4fa0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 2
+  sensitivity: 2.5
   smooth: 5
   character: {fileID: 460776464}
 --- !u!4 &1518876446
@@ -2027,7 +2041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5530728432725399791, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player Container
       objectReference: {fileID: 0}
     - target: {fileID: 5530728432725399791, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
       propertyPath: m_TagString
@@ -2043,6 +2057,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2414385014635232735, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 673254123}
+    - targetCorrespondingSourceObject: {fileID: 2414385014635232735, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 673254128}
   m_SourcePrefab: {fileID: 100100000, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
