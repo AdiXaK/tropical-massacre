@@ -373,6 +373,7 @@
 "Assets/Scripts/Player/Controller/CharacterControllerRotation.cs"
 "Assets/Scripts/Player/Controller/FollowObjectView.cs"
 "Assets/Scripts/Player/Controller/HeadBob.cs"
+"Assets/Scripts/Progress system/PlayerExperience.cs"
 -langversion:9.0
 
 /deterministic

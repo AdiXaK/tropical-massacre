@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Player\Controller\CharacterControllerRotation.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthManegar.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\CharacterControllerMovement.cs" />
+    <Compile Include="Assets\Scripts\Progress system\PlayerExperience.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
