@@ -4,9 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Eneny
   - Bullet
   - noPlayerbullet
+  - pirate
+  - crocodile
+  - gorilla
+  - papuas
   layers:
   - Default
   - TransparentFX

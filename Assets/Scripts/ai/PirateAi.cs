@@ -31,7 +31,7 @@ public class PirateAi : MonoBehaviour
             Vector3 direction = (player.position - enemy.position).normalized;
             enemy.position += direction * movementSpeed * Time.deltaTime;
         }
-        else if (distance < distanceThreshold + deadZone)
+        else if (distance < distanceThreshold - deadZone)
         {
             Vector3 direction = (enemy.position - player.position).normalized;
             enemy.position += direction * movementSpeed * Time.deltaTime;
@@ -41,12 +41,20 @@ public class PirateAi : MonoBehaviour
                 lastFireTime = Time.time;
             }
         }
+        else if (distance < distanceThreshold + deadZone)
+        {
+            enemy.position = enemy.position;
+            if (Time.time - lastFireTime >= fireRate)
+            {
+                FireBullet();
+                lastFireTime = Time.time;
+            }
+        }
     }
-
     void FireBullet()
     {
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Vector3 shootDirection = (player.position - firePoint.position).normalized;
+        Vector3 shootDirection = (player.position - firePoint.position ).normalized;
         projectile.transform.rotation = Quaternion.LookRotation(shootDirection);
 
         ProjectileScript projectileScript = projectile.GetComponent<ProjectileScript>();

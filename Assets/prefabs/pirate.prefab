@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -8081832350520431257}
   m_Layer: 0
   m_Name: pirate
-  m_TagString: Eneny
+  m_TagString: pirate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88b2aee2e137b144be87a074dae2481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
-  currentHealth: 2
+  maxHealth: 10
+  currentHealth: 10
 --- !u!114 &2755061264256919041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935214765000312218}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -206,6 +206,6 @@ MonoBehaviour:
   distanceThreshold: 10
   movementSpeed: 3
   deadZone: 4
-  fireRate: 2
+  fireRate: 4
   bulletPrefab: {fileID: 1483241524860640535, guid: 95fbd5d4f25cf9c4086023aed39fefc6, type: 3}
   firePoint: {fileID: 1917858645875094925}

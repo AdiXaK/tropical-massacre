@@ -432,9 +432,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa716f9667f8eff449fba4ee279af1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobSpeed: 1
-  bobAmount: 0.1
-  bobHorizontalAmount: 0.1
+  bobSpeed: 0.5
+  bobAmount: 1
+  bobHorizontalAmount: 1
 --- !u!1 &673254113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2414385014635232735, guid: 347236d85c2a4ea40b927c62c096ad90, type: 3}
@@ -505,14 +505,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObjects:
   - prefab: {fileID: 6935214765000312218, guid: 04517855e2138cd48bcffc42c9605184, type: 3}
-    spawnChance: 10
+    spawnChance: 20
     spawnDistance: 25
   - prefab: {fileID: 6935214765000312218, guid: 1297e44ebc77c0e45a4c82a772e99e51, type: 3}
-    spawnChance: 10
+    spawnChance: 40
     spawnDistance: 25
-  spawnInterval: 4
+  - prefab: {fileID: 6935214765000312218, guid: 75b3e7ce0b152c84e9479e2a5a2e92c7, type: 3}
+    spawnChance: 15
+    spawnDistance: 25
+  - prefab: {fileID: 6935214765000312218, guid: ba718ce3e9d3b4e43b1ac74fbca91cec, type: 3}
+    spawnChance: 25
+    spawnDistance: 25
+  spawnInterval: 3.5
   enemyCount: 1
-  enemyIncreaseAmount: 4
+  enemyIncreaseAmount: 3
 --- !u!4 &924457155
 Transform:
   m_ObjectHideFlags: 0
