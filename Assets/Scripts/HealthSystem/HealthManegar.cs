@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        GlobalEventManager.SendHPChanged();
         if (currentHealth <= 0)
         {
             Die();
@@ -31,5 +32,8 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
 }
