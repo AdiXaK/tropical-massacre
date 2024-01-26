@@ -378,6 +378,9 @@
 "Assets/Scripts/Progress system/PlayerExperience.cs"
 "Assets/Scripts/UI/HPBarManager.cs"
 "Assets/Scripts/UI/MenuManager.cs"
+"Assets/Scripts/UI/PauseController.cs"
+"Assets/Scripts/UI/TimerScript.cs"
+"Assets/Scripts/UI/WinOrLoseController.cs"
 -langversion:9.0
 
 /deterministic

@@ -68,9 +68,12 @@
     <Compile Include="Assets\Scripts\attack\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\ai\PirateAi.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\HeadBob.cs" />
+    <Compile Include="Assets\Scripts\UI\WinOrLoseController.cs" />
     <Compile Include="Assets\Scripts\GlobalEventManager.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseController.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\DamageOnCollision.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\BaseCharacterRotation.cs" />
+    <Compile Include="Assets\Scripts\UI\TimerScript.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\FollowObjectView.cs" />
     <Compile Include="Assets\Scripts\Player\Controller\CharacterControllerRotation.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthManegar.cs" />

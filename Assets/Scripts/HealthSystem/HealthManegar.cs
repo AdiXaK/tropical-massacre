@@ -4,8 +4,9 @@ public class HealthManager : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth = 100;
+	[SerializeField] WinOrLoseController winOrLoseController;
 
-    void Start()
+	void Start()
     {
         currentHealth = maxHealth;
     }
@@ -24,7 +25,7 @@ public class HealthManager : MonoBehaviour
     {
         if (this.CompareTag("Player"))
         {
-            return;
+            winOrLoseController.ShowLoseScreen();
         }
         else
         {
