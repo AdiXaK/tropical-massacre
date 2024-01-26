@@ -13,6 +13,9 @@ public class HPBarManager : MonoBehaviour
 
 	void HPChenged()
     {
-		fillHP.fillAmount = (float)playerHealth.GetHealth() / 100;
+ 
+            fillHP.fillAmount = (float)playerHealth.GetHealth() / playerHealth.maxHealth;
+     
+
     }
 }
