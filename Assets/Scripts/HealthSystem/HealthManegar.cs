@@ -29,6 +29,7 @@ public class HealthManager : MonoBehaviour
         }
         else
         {
+          GlobalEventManager.SendEnemyDie();
           this.gameObject.SetActive(false);
         }
     }

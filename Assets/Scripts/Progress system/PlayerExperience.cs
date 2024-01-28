@@ -1,4 +1,4 @@
-using System.Linq;
+п»їusing System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,15 +7,28 @@ public class PlayerExperience : MonoBehaviour
     public HealthManager healthManager;
     public DamageOnCollision damageOnCollision;
     public PlayerShooting playerShooting;
+    public Image expFill;
+	public GameObject powerUp;
 
-    public int killsCount = 0;
+	public int killsCount = 0;
     public int upgradeCount = 0;
     public int maxKillsForUpgrade = 10;
 
+	private void Start()
+	{
+        GlobalEventManager.OnEnemyDie += IncreaseKillsCount;
+	}
 
-    public void IncreaseKillsCount()
+	private void OnDestroy()
+	{
+		GlobalEventManager.OnEnemyDie -= IncreaseKillsCount;
+	}
+
+	public void IncreaseKillsCount()
     {
         killsCount++;
+
+        expFill.fillAmount = (float)killsCount / maxKillsForUpgrade;
 
         if (killsCount >= maxKillsForUpgrade)
         {
@@ -32,30 +45,40 @@ public class PlayerExperience : MonoBehaviour
     private void UpgradePlayer()
     {
         upgradeCount++;
+        maxKillsForUpgrade = (int)((float)maxKillsForUpgrade * 1.5f);
 
-        //восстановление хп
+        //ГўГ®Г±Г±ГІГ Г­Г®ГўГ«ГҐГ­ГЁГҐ ГµГЇ
         healthManager.currentHealth = healthManager.maxHealth;
 
-        // Улучшение урона
-        damageOnCollision.damageAmount += 5;
+        // Г“Г«ГіГ·ГёГҐГ­ГЁГҐ ГіГ°Г®Г­Г 
+        //damageOnCollision.damageAmount += 5; //РќР°СЃ РЅР°С‡РёРЅР°СЋС‚ Р±С‹СЃС‚СЂРµРµ СѓР±РёРІР°С‚СЊ, С‚Р°Рє РЅСѓР¶РЅРѕ? Р•СЃР»Рё РґР° СЂР°СЃРєРѕРјРµРЅС‚РёСЂСѓР№
+
+        powerUp.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void UpgradeMaxHealth()
     {
-        // Улучшение максимального здоровья и текущего здоровья
+        // Г“Г«ГіГ·ГёГҐГ­ГЁГҐ Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­Г®ГЈГ® Г§Г¤Г®Г°Г®ГўГјГї ГЁ ГІГҐГЄГіГ№ГҐГЈГ® Г§Г¤Г®Г°Г®ГўГјГї
         healthManager.maxHealth += 10;
         healthManager.currentHealth = healthManager.maxHealth;
-    }
+		powerUp.SetActive(false);
+		Time.timeScale = 1;
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = true;
+	}
 
     public void UpgradeDamage()
     {
-        // Находим все игровые объекты с заданными тегами
+        // ГЌГ ГµГ®Г¤ГЁГ¬ ГўГ±ГҐ ГЁГЈГ°Г®ГўГ»ГҐ Г®ГЎГєГҐГЄГІГ» Г± Г§Г Г¤Г Г­Г­Г»Г¬ГЁ ГІГҐГЈГ Г¬ГЁ
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("crocodile");
         enemies = enemies.Concat(GameObject.FindGameObjectsWithTag("gorilla")).ToArray();
         enemies = enemies.Concat(GameObject.FindGameObjectsWithTag("papuas")).ToArray();
         enemies = enemies.Concat(GameObject.FindGameObjectsWithTag("pirate")).ToArray();
 
-        // Обновляем урон в компонентах DamageOnCollision на всех найденных объектах
+        // ГЋГЎГ­Г®ГўГ«ГїГҐГ¬ ГіГ°Г®Г­ Гў ГЄГ®Г¬ГЇГ®Г­ГҐГ­ГІГ Гµ DamageOnCollision Г­Г  ГўГ±ГҐГµ Г­Г Г©Г¤ГҐГ­Г­Г»Гµ Г®ГЎГєГҐГЄГІГ Гµ
         foreach (GameObject enemy in enemies)
         {
             DamageOnCollision damageComponent = enemy.GetComponent<DamageOnCollision>();
@@ -64,10 +87,20 @@ public class PlayerExperience : MonoBehaviour
                 damageComponent.damageAmount += 5;
             }
         }
-    }
+
+		powerUp.SetActive(false);
+		Time.timeScale = 1;
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = true;
+	}
     public void UpgradeAttackSpeed()
     {
-        // Улучшение скорострельности
+        // Г“Г«ГіГ·ГёГҐГ­ГЁГҐ Г±ГЄГ®Г°Г®Г±ГІГ°ГҐГ«ГјГ­Г®Г±ГІГЁ
         playerShooting.attackSpeed += 2;
-    }
+
+		powerUp.SetActive(false);
+		Time.timeScale = 1;
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = true;
+	}
 }

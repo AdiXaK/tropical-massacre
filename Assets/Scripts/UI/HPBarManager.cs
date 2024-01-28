@@ -11,9 +11,14 @@ public class HPBarManager : MonoBehaviour
 		GlobalEventManager.OnHpChanged += HPChenged;
 	}
 
+	private void OnDestroy()
+	{
+		GlobalEventManager.OnHpChanged -= HPChenged;
+	}
+
 	void HPChenged()
     {
  
-            fillHP.fillAmount = (float)playerHealth.GetHealth() / playerHealth.maxHealth;
+        fillHP.fillAmount = (float)playerHealth.GetHealth() / playerHealth.maxHealth;
     }
 }

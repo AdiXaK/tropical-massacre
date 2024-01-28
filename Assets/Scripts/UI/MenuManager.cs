@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] GameObject authors;
+
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -12,4 +14,15 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ShowObject()
+    {
+        authors.SetActive(true);
+    }
+
+	public void HideObject()
+	{
+		authors.SetActive(false);
+		
+	}
 }
