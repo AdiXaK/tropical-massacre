@@ -10,6 +10,8 @@ TagManager:
   - crocodile
   - gorilla
   - papuas
+  - meleeWeapon
+  - meleeAttack
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - IslandLight
+  - CharacterLight
   - 
   - 
   - 

@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     public float attackRange = 2f;
     public float movementSpeed = 3.5f;
+    public Animator _animator;
 
     private void Start()
     {
@@ -31,6 +32,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Атака!");
+        _animator.SetTrigger("Attack");
     }
 }

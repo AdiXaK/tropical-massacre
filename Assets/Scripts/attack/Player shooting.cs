@@ -7,6 +7,7 @@ public class PlayerShooting : MonoBehaviour
 	public float attackSpeed = 0.5f;
     public float projectileSpeed = 20f;
     private float lastFireTime = 0f;
+    public AudioSource shootSound;
 
     void Update()
     {
@@ -22,6 +23,7 @@ public class PlayerShooting : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, bulletPoint.transform.position, transform.rotation);
         ProjectileScript projectileScript = projectile.AddComponent<ProjectileScript>();
         projectileScript.SetProperties(projectileSpeed);
-    }
+		shootSound.Play();
+	}
 }
 
