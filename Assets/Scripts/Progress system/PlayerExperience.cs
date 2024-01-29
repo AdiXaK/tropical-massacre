@@ -96,7 +96,7 @@ public class PlayerExperience : MonoBehaviour
     public void UpgradeAttackSpeed()
     {
         // Óëó÷øåíèå ñêîðîñòðåëüíîñòè
-        playerShooting.attackSpeed += 2;
+        playerShooting.attackSpeed += 3;
 
 		powerUp.SetActive(false);
 		Time.timeScale = 1;

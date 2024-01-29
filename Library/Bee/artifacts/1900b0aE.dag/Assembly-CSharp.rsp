@@ -364,6 +364,7 @@
 "Assets/Scripts/ai/EnemySpawner.cs"
 "Assets/Scripts/ai/ObjectPull.cs"
 "Assets/Scripts/ai/PirateAi.cs"
+"Assets/Scripts/Animation/PlayerAnimationController.cs"
 "Assets/Scripts/attack/Player shooting.cs"
 "Assets/Scripts/attack/ProjectileScript.cs"
 "Assets/Scripts/GlobalEventManager.cs"

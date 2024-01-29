@@ -25,14 +25,15 @@ public class PirateAi : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(player.position, enemy.position);
-
-        if (distance > distanceThreshold)
+		transform.LookAt(player.position);
+		if (distance > distanceThreshold)
         {
             Vector3 direction = (player.position - enemy.position).normalized;
             enemy.position += direction * movementSpeed * Time.deltaTime;
         }
         else if (distance < distanceThreshold - deadZone)
         {
+            
             Vector3 direction = (enemy.position - player.position).normalized;
             enemy.position += direction * movementSpeed * Time.deltaTime;
             if (Time.time - lastFireTime >= fireRate)
